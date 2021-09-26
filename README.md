@@ -28,7 +28,7 @@ This code base is built using Node.js and will require node and npm to be avaibl
 1. Clone this repo to your machine.
 
 ```sh
-$ git clone https://github.com/Ozeidi/Vaccine-Bot.git
+ git clone https://github.com/Ozeidi/Vaccine-Bot.git
 ```
 2. cd into the cloned dirctory:
 
@@ -37,12 +37,12 @@ $ cd Vaccine-Bot
 ```
 3. Install the required packages:
 ```sh
-$ npm install
+ npm install
 ```
 4. Launch the script as following. The first parameter is the link to flat file containing the Civil IDs=. The second parameter is the output file name.
 
 ```sh
-$ node covid_bot.js "data/ID.csv" "data/scrap.xlsx"
+ node covid_bot.js "data/ID.csv" "data/scrap.xlsx"
 
  CivilID: '*****\r',
   Status: '1st Dose\t\n' +
