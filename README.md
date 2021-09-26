@@ -33,11 +33,15 @@ This code base is built using Node.js and will require node and npm to be avaibl
 2. cd into the cloned dirctory:
 
 ```sh
-$ cd Vaccine-Bot
+cd Vaccine-Bot
 ```
 3. Install the required packages:
 ```sh
  npm install
+```
+on some systems you may still need to install chromium browser with puppeteer
+```sh
+node node_modules/puppeteer/install.js
 ```
 4. Launch the script as following. The first parameter is the link to flat file containing the Civil IDs=. The second parameter is the output file name.
 

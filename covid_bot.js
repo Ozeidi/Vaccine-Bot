@@ -57,7 +57,7 @@ String.prototype.allTrim = String.prototype.allTrim ||
 //*[@id="mat-form-field-label-3"]/mat-label
 
 // Fucntion used to fetch the data from a course page
- async function scrapeCourse(page, id){
+ async function scrapePage(page, id){
     let res = ""
     await page.waitForXPath('//*[@id="mat-input-1"]');
 
@@ -95,12 +95,13 @@ String.prototype.allTrim = String.prototype.allTrim ||
 
 // Wraper to iterate over lis of courses
 async function Crawl(inputFile, outputFile){
-    //var browser =   await puppeteer.launch();
-    var browser = await puppeteer.launch({ 
-        headless: false,
-        defaultViewport: null,
-        args: ['--start-maximized'] 
-  });
+    var browser =   await puppeteer.launch();
+// Uncomment this block if you wich to see the browser window
+//     var browser = await puppeteer.launch({ 
+//         headless: false,
+//         defaultViewport: null,
+//         args: ['--start-maximized'] 
+//   });
 
 
     var page = await  browser.newPage();
@@ -111,7 +112,7 @@ async function Crawl(inputFile, outputFile){
     let ids = fs.readFileSync(inputFile, "utf8");
     ids = ids.split("\n");
     ids = ids.slice(1);
-    //let urls = ['6678019','708267', '111']
+
     console.log(ids.length);
     
     let len = ids.length;
@@ -123,7 +124,7 @@ async function Crawl(inputFile, outputFile){
         console.log(civilID);
         
         
-        let res =await scrapeCourse(page, civilID);
+        let res =await scrapePage(page, civilID);
         lst.push(res);
         console.log(res)
         //await page.goBack();
